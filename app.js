@@ -72,6 +72,7 @@ function copyText(){
     navigator.clipboard.writeText(texto); // Copiar texto al portapapeles
     cleanOutputText();
     btnCopy.textContent = "Copiado";
+    // validateOutputText();
     
 }
 
@@ -94,9 +95,22 @@ function cleanOutputText(){
     document.getElementById("salidaTexto").value = "";
 }
 
-function setEncryptedText(elemeto,texto){
-    document.getElementById(elemeto).value = texto;
+function setEncryptedText(element, text) {
+    const inputElement = document.getElementById(element);
+    let index = 0;
+
+    //sirve para que el texto se escriba letra por letra
+    function typeNextCharacter() {
+        if (index < text.length) {
+            inputElement.value += text.charAt(index);
+            index++;
+            setTimeout(typeNextCharacter, 50); 
+        }
+    }
+
+    typeNextCharacter();
 }
+
 
 function getText(elemento){
     let texto = document.getElementById(elemento).value;
@@ -107,17 +121,29 @@ function validateOutputText() {
     let salidaTexto = getText("salidaTexto");
 
     if (salidaTexto === "") {
+        // emptyImage.classList.remove("image-out");
+        emptyImage.classList.add("image-in"); 
         btnCopyDiv.style.display = "none"; // Ocultar el botón de copiar
         outputTextDiv.style.display = "none"; // Ocultar el textarea
-        // Aquí puedes agregar el código para mostrar la imagen en su lugar
         emptyImage.style.display = "block";
-        emptyImage.style.width = "60%";
-        emptyImage.style.height = "auto";
-        emptyImage.style.margin = "10px auto 10px auto";
     } else {
+        /* 
+            *En este caso, la función addEventListener se utiliza para escuchar
+            *un evento específico en el elemento emptyImage.
+            *El evento que se está escuchando es "animationend", que se
+            *dispara cuando una animación en el elemento emptyImage ha finalizado.
+        */
+        emptyImage.classList.remove("image-in");
+        // emptyImage.classList.add("image-out");
         emptyImage.style.display = "none";
-        btnCopyDiv.style.display = "flex"; // Mostrar el botón de copiar
-        outputTextDiv.style.display = "block"; // Mostrar el textarea
+            btnCopyDiv.style.display = "flex";
+            outputTextDiv.style.display = "block";  
+        // emptyImage.addEventListener("animationend", function() {
+        //     emptyImage.style.display = "none";
+        //     btnCopyDiv.style.display = "flex";
+        //     outputTextDiv.style.display = "block"; 
+        // // emptyImage.classList.add("animation-out"); 
+        // });
     }
 }
 

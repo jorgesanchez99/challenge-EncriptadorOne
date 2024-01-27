@@ -156,9 +156,42 @@ body{
 }
 
 .emptyImage{
-    display: none;
+    /* display: none; */
+    width : 60%;
+    height: auto;
+    margin: 10px auto 10px auto;
 }
 
+.emptyImage.image-in{
+    animation-name: start-image;
+    animation-duration: 1.7s;
+}
+
+@keyframes start-image{
+    0% {
+		transform: scaleY(0);
+	}
+
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+
+.emptyImage.image-out {
+    animation-name: fade-out-image;
+    animation-duration: 1s;
+}
+
+@keyframes fade-out-image {
+    0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
 
 /* !media queries */
 
