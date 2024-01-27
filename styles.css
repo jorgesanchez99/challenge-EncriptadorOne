@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* color: white; */
+    font-family: 'Anton', sans-serif;
+}
+
+body{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.header-container{
+    background-color: #12f299;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo_alura{
+    width: 100px;
+    height: 100px;
+    border: #0a0a0a 1px solid;
+}
+
+.barra-nav ul li{
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.barra-nav ul li a{
+    color: #000000;
+    text-decoration: none;
+}
+
+.barra-nav ul li a:hover{
+    color: #f27108;
+    font-size: 2.5rem;
+}
+
+
+.title-container{
+    margin: 10px auto;
+    padding-top: 10px;
+    border: #0a0a0a 1px solid;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.title-container span{
+    color: #f27108;
+}
+
+.content-container{
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+
+.input-container{
+    width: 48%;
+    margin-bottom: 10px;
+    border: #9cadeb 2px solid;
+}
+.inputText-container{
+    width: 100%;
+    padding: 10px;
+}
+
+.inputText-container label{
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.inputText-container textarea{
+    width: 100%;
+    height: 15rem;
+    margin-bottom: 10px;
+    border: #f27108 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+}
+
+.buttons-encript-container{
+    width: 75%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    border: #12f299 1px solid;
+}
+
+.buttons-encript-container button{
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.encrypt-button{
+    background-color: #9cadeb;
+}
+
+.decrypt-button{
+    background-color: #d6d894b1;
+}
+
+
+.output-container{
+    width: 48%;
+    border: red 2px solid;
+    border-radius: 20px;
+}
+.outputText-container{
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+}
+
+.outputText-container textarea{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    background: none;
+    resize: none;
+}
+
+
+.buttonCopy-div{
+    width: 25%;
+    height: 13%;
+    margin: 10px auto;
+    border: purple 1px solid;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonCopy-div button{
+    margin: auto;
+    width: 100%;
+    height: 35px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(239, 216, 13, 0.45);
+}
+
+.emptyImage{
+    display: none;
+}
+
+
+/* !media queries */
+
+@media screen and (max-width: 1440px) {
+    .buttons-encript-container button{
+        width: 150px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .buttons-encript-container button{
+        width: 120px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .buttons-encript-container button{
+        width: 100px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        width: 95%;
+    }
+
+    .buttons-encript-container button{
+        width: 100px;
+        height: 40px;
+        font-size: 1rem;
+    }
+ 
+}
+
+@media screen and (max-width: 640px){
+    body{
+        width: 95%;
+    }
+
+    .buttons-encript-container button{
+        width: 80px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+ 
+}
+
+@media screen and (max-width: 510px){
+    body{
+        width: 95%;
+    }
+
+    .buttons-encript-container button{
+        width: 60px;
+        height: 40px;
+        font-size: 0.65rem;
+    }
+
+    .buttonCopy-div button{
+        height: 35px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+    }
+
+    .buttonCopy-div{
+        width: 35%;
+    }
+
+    .barra-nav ul li{
+        font-size: 1rem;
+    }
+    
+    
+    .barra-nav ul li a:hover{
+        font-size: 1.2rem;
+    }
+
+    
+ 
+}
+
+
+@media screen and (max-width: 320px){
+    
+    body{
+        width: 95%;
+    }
+
+    .buttons-encript-container button{
+        width: 50px;
+        height: 40px;
+        font-size: 0.55rem;
+    }
+
+    .buttonCopy-div button{
+        height: 35px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+    }
+
+    .buttonCopy-div{
+        width: 35%;
+    }
+
+  
+    
+ 
+}

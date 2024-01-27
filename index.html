@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Encriptador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+
+    <header class="header-container">
+        <a href="https://www.linkedin.com/company/alura-latam/" target="_blank">
+            <img class="logo_alura" src="images/logo_alura.png" alt="Logo Alura">
+        </a>
+        <nav class="barra-nav">
+            <ul>
+                <li><a href="index.html">Challenge</a></li>
+                <li><a href="cifradoCesar.html">Cifrado Cesar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="title-container">
+        <h1>Encriptador</h1>
+        <span> Challenge </span>
+        <span>One</span>
+    </div>
+    
+    <div class="content-container">
+        <div class="input-container">
+            
+            <div class="inputText-container">
+                <label class="input-label" for="entradaTexto" >Ingrese el texto aqui</label>
+                <textarea id="entradaTexto" name="entradaTexto" ></textarea>
+            </div>
+
+            <div class="buttons-encript-container">
+                <button class="encrypt-button" id="botonEncriptar" onclick="encryptText();">Encriptar</button>
+                <button class="decrypt-button" id="botonDesencriptar" onclick="decryptText();">Desencriptar</button>
+            </div>
+            
+            
+        </div>
+        <div class="output-container">
+            <img id="emptyImage" class="emptyImage" src="images/llave.jpeg" alt="Empty Image" >
+            <div class="outputText-container" id="outputText-container">
+                <textarea id="salidaTexto" name="salidaTexto" cols="70" rows="10" disabled></textarea>
+            </div>
+            <div class="buttonCopy-div" id="buttonCopy-div">
+                <button id="btnCopy" onclick="copyText();">Copiar</button>
+            </div>
+            
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    <script src="app.js"></script>
+</body>
+
+</html>
