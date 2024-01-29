@@ -141,7 +141,7 @@ body{
     height: 13%;
     margin: 10px auto;
     border: purple 1px solid;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 
@@ -156,11 +156,24 @@ body{
 }
 
 .emptyImage{
-    /* display: none; */
+    /* display: block; */
     width : 60%;
     height: auto;
     margin: 10px auto 10px auto;
 }
+
+.remove {
+    display: none;
+}
+
+.addBlock {
+    display: block;
+}
+
+.addFlex{
+    display: flex;
+}
+
 
 .emptyImage.image-in{
     animation-name: start-image;

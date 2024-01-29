@@ -1,3 +1,5 @@
+
+
 let btnCopy = document.getElementById("btnCopy");
 let btnCopyDiv = document.getElementById("buttonCopy-div");
 let outputTextDiv = document.getElementById("outputText-container");
@@ -15,7 +17,7 @@ let emptyImage = document.getElementById("emptyImage");
 */
 
 // validateButtonCopy();
-validateOutputText();
+initialImageStyles();
 
 function validateText() {
     let texto = document.getElementById("entradaTexto").value;
@@ -36,35 +38,60 @@ function validateText() {
 }
 
 function encryptText(){
-    let texto = getText("entradaTexto");
-    cleanInputText();
+    cleanOutputText();
+    let texto = getText("entradaTexto").trim();
 
-    // Encriptar texto
-    texto = texto.replace(/e/g, "enter");
-    texto = texto.replace(/i/g, "imes");
-    texto = texto.replace(/a/g, "ai");
-    texto = texto.replace(/o/g, "ober");
-    texto = texto.replace(/u/g, "ufat");
+    if(texto === ""){
+        Swal.fire({
+            title: 'Atencion!',
+            text: 'Por favor, ingrese un texto para encriptar.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        }); 
+    } else{
+        hideImage();
+        cleanInputText();
 
-    setEncryptedText("salidaTexto",texto);
-    btnCopy.textContent = "Copiar";
-    validateOutputText();
+        // Encriptar texto
+        texto = texto.replace(/e/g, "enter");
+        texto = texto.replace(/i/g, "imes");
+        texto = texto.replace(/a/g, "ai");
+        texto = texto.replace(/o/g, "ober");
+        texto = texto.replace(/u/g, "ufat");
+        
+        setEncryptedText("salidaTexto",texto);
+        btnCopy.textContent = "Copiar";
+        
+    }
+
+    
 }
 
 function decryptText(){
+    cleanOutputText();
     let texto = getText("entradaTexto");
-    cleanInputText();
 
-    // Desencriptar texto
-    texto = texto.replace(/enter/g, "e");
-    texto = texto.replace(/imes/g, "i");
-    texto = texto.replace(/ai/g, "a");
-    texto = texto.replace(/ober/g, "o");
-    texto = texto.replace(/ufat/g, "u");
+    if(texto === ""){
+        Swal.fire({
+            title: 'Atencion!',
+            text: 'Por favor, ingrese un texto para desencriptar.',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        }); 
+    } else{
+        hideImage();
+        cleanInputText();
 
-    setEncryptedText("salidaTexto",texto);
-    btnCopy.textContent = "Copiar";
-    validateOutputText();
+        // Desencriptar texto
+        texto = texto.replace(/enter/g, "e");
+        texto = texto.replace(/imes/g, "i");
+        texto = texto.replace(/ai/g, "a");
+        texto = texto.replace(/ober/g, "o");
+        texto = texto.replace(/ufat/g, "u");
+
+        setEncryptedText("salidaTexto",texto);
+        btnCopy.textContent = "Copiar";
+    }
 }
 
 function copyText(){
@@ -72,8 +99,7 @@ function copyText(){
     navigator.clipboard.writeText(texto); // Copiar texto al portapapeles
     cleanOutputText();
     btnCopy.textContent = "Copiado";
-    // validateOutputText();
-    
+    showImage();
 }
 
 // function validateButtonCopy(){
@@ -117,36 +143,69 @@ function getText(elemento){
     return texto;
 }
 
-function validateOutputText() {
-    let salidaTexto = getText("salidaTexto");
 
-    if (salidaTexto === "") {
-        // emptyImage.classList.remove("image-out");
-        emptyImage.classList.add("image-in"); 
-        btnCopyDiv.style.display = "none"; // Ocultar el botón de copiar
-        outputTextDiv.style.display = "none"; // Ocultar el textarea
-        emptyImage.style.display = "block";
-    } else {
-        /* 
-            *En este caso, la función addEventListener se utiliza para escuchar
-            *un evento específico en el elemento emptyImage.
-            *El evento que se está escuchando es "animationend", que se
-            *dispara cuando una animación en el elemento emptyImage ha finalizado.
-        */
-        emptyImage.classList.remove("image-in");
-        // emptyImage.classList.add("image-out");
-        emptyImage.style.display = "none";
-            btnCopyDiv.style.display = "flex";
-            outputTextDiv.style.display = "block";  
-        // emptyImage.addEventListener("animationend", function() {
-        //     emptyImage.style.display = "none";
-        //     btnCopyDiv.style.display = "flex";
-        //     outputTextDiv.style.display = "block"; 
-        // // emptyImage.classList.add("animation-out"); 
-        // });
-    }
+function initialImageStyles(){
+    btnCopyDiv.classList.add('remove'); 
+    outputTextDiv.classList.add('remove');
+    emptyImage.classList.add('addBlock'); 
+    emptyImage.classList.add("image-in");
 }
 
+function showImage(){
+    
+    outputTextDiv.classList.remove('addBlock');
+    outputTextDiv.classList.add('remove');
+    
+    emptyImage.classList.remove("remove");
+    emptyImage.classList.add('addBlock');
+    emptyImage.classList.add("image-in");
+
+    
+    setTimeout(function() {
+        btnCopyDiv.classList.remove('addFlex');
+        btnCopyDiv.classList.add('remove');
+    }, 1000);
+
+return;
+
+    // emptyImage.addEventListener("animationend", function() {
+    //     btnCopyDiv.classList.remove('addFlex');
+    //     btnCopyDiv.classList.add('remove');
+    // });
+}
+
+function hideImage(){
+   
+    // emptyImage.classList.remove("image-in");
+    // emptyImage.classList.add("image-out");
+    btnCopyDiv.classList.remove('remove');
+    outputTextDiv.classList.remove('remove');
+
+    emptyImage.classList.remove('addBlock');
+    emptyImage.classList.add('remove');
+
+    btnCopyDiv.classList.add('addFlex');
+    outputTextDiv.classList.add('addBlock');
+    // emptyImage.classList.remove("image-out"); 
+
+    // emptyImage.addEventListener("animationend", function() {
+    //     btnCopyDiv.classList.remove('remove');
+    //     outputTextDiv.classList.remove('remove');
+    //     emptyImage.classList.remove('addBlock');
+    //     emptyImage.classList.add('remove');
+    //     btnCopyDiv.classList.add('addFlex');
+    //     outputTextDiv.classList.add('addBlock');
+    //     emptyImage.classList.remove("image-out"); 
+    // });
+}
+
+
+
+function setInitialText() {
+    let textoInicial = "Ingrese un mensaje para encriptar o desencriptar"
+    document.getElementById("salidaTexto").value = textoInicial;
+
+}
 
 function encryptText2() {
     let alfabeto = [
@@ -184,3 +243,11 @@ function encryptText2() {
 
     document.getElementById("salidaTexto").value = lineasEncriptadas.join('\n');
 }
+
+
+ /* 
+    *En este caso, la función addEventListener se utiliza para escuchar
+    *un evento específico en el elemento emptyImage.
+    *El evento que se está escuchando es "animationend", que se
+    *dispara cuando una animación en el elemento emptyImage ha finalizado.
+*/
