@@ -38,9 +38,8 @@ function validateText() {
 }
 
 function encryptText(){
-    cleanOutputText();
     let texto = getText("entradaTexto").trim();
-
+    
     if(texto === ""){
         Swal.fire({
             title: 'Atencion!',
@@ -49,6 +48,7 @@ function encryptText(){
             confirmButtonText: 'Ok'
         }); 
     } else{
+        cleanOutputText();
         hideImage();
         cleanInputText();
 
@@ -68,9 +68,8 @@ function encryptText(){
 }
 
 function decryptText(){
-    cleanOutputText();
     let texto = getText("entradaTexto");
-
+    
     if(texto === ""){
         Swal.fire({
             title: 'Atencion!',
@@ -79,6 +78,7 @@ function decryptText(){
             confirmButtonText: 'Ok'
         }); 
     } else{
+        cleanOutputText();
         hideImage();
         cleanInputText();
 
