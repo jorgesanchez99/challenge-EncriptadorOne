@@ -3,6 +3,8 @@ let btnCopyDiv = document.getElementById("buttonCopy-div");
 let outputTextDiv = document.getElementById("outputText-container");
 let emptyImage = document.getElementById("emptyImage");
 let divTextoInformativo = document.getElementById("textoInformativo");
+let h2Informativo   = "Ningun mensaje fue encontrado";
+let spanInformativo = "Por favor, ingrese un mensaje para encriptar o desencriptar";
 
 /* 
 !Expresion regular:
@@ -16,6 +18,7 @@ let divTextoInformativo = document.getElementById("textoInformativo");
 */
 
 initialImageStyles();
+setInitialText();
 
 function validateText() {
     let texto = document.getElementById("entradaTexto").value;
@@ -132,6 +135,8 @@ function setEncryptedText(element, text) {
 }
 
 
+
+
 function getText(elemento){
     let texto = document.getElementById(elemento).value;
     return texto;
@@ -181,9 +186,24 @@ function hideImage(){
 
 
 function setInitialText() {
-    let textoInicial = "Ingrese un mensaje para encriptar o desencriptar"
-    document.getElementById("salidaTexto").value = textoInicial;
+    typeText("h2Informativo", h2Informativo, 80);
+    typeText("spanInformativo", spanInformativo, 80);
 
+}
+
+function typeText(elementId, text, delay) {
+    const element = document.getElementById(elementId);
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, delay);
+        }
+    }
+
+    type();
 }
 
 function encryptText2() {

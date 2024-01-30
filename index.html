@@ -40,7 +40,7 @@
             
             <div class="inputText-container">
                 <label class="input-label" for="entradaTexto" >Ingrese el texto aqui</label>
-                <textarea id="entradaTexto" name="entradaTexto" oninput="validateText()"></textarea>
+                <textarea id="entradaTexto" name="entradaTexto" oninput="validateText()" placeholder="Recuerde ingresar solo letras minúsculas"></textarea>
             </div>
             <div class="textoLimitante">
                 <img class="icon_alert" src="images/icon_alert.png">
@@ -61,8 +61,8 @@
                 <textarea id="salidaTexto" name="salidaTexto"  disabled></textarea>
             </div>
             <div class="textoInformativo" id="textoInformativo">
-                <h2>Ningun mensaje fue encontrado</h2>
-                <span>Ingrese el texto que sea encriptar o desencriptar</span>
+                <h2 id="h2Informativo"></h2>
+                <span id="spanInformativo"></span>
             </div>
             
             
