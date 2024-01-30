@@ -3,28 +3,32 @@
     margin: 0;
     padding: 0;
     /* color: white; */
-    font-family: 'Anton', sans-serif;
+    font-family: 'Hind Siliguri', sans-serif;
 }
 
 body{
     margin: 0 auto;
     width: 80%;
+    background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .header-container{
-    background-color: #12f299;
+    /* background-color: #12f299; */
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .logo_alura{
     width: 100px;
     height: 100px;
-    border: #0a0a0a 1px solid;
+    /* border: #0a0a0a 1px solid; */
 }
 
 .barra-nav ul li{
@@ -35,7 +39,7 @@ body{
 }
 
 .barra-nav ul li a{
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -48,13 +52,14 @@ body{
 .title-container{
     margin: 10px auto;
     padding-top: 10px;
-    border: #0a0a0a 1px solid;
+    /* border: #0a0a0a 1px solid; */
     text-align: center;
     line-height: 2.5rem;
+    color: #ffffff;
 }
 
 .title-container span{
-    color: #f27108;
+    color: #ffffff;
 }
 
 .content-container{
@@ -62,17 +67,20 @@ body{
     width: 100%;
     margin: 20px auto;
     justify-content: space-between;
-    border: #0a0a0a 2px solid;
+    /* border: #0a0a0a 2px solid; */
 }
 
 .input-container{
     width: 48%;
     margin-bottom: 10px;
-    border: #9cadeb 2px solid;
+    /* border: #9cadeb 2px solid; */
 }
 .inputText-container{
     width: 100%;
-    padding: 10px;
+    padding: 0 10px 0 10px;
+    /* padding: 10px; */
+    color: #ffffff;
+    /* border: #d6d894b1 5px solid; */
 }
 
 .inputText-container label{
@@ -84,11 +92,25 @@ body{
 .inputText-container textarea{
     width: 100%;
     height: 15rem;
-    margin-bottom: 10px;
-    border: #f27108 2px solid;
+    margin-bottom: 0;
+    /* border: #f27108 2px solid; */
     border-radius: 20px;
     padding: 10px;
     resize: none;
+}
+.textoLimitante{
+    /* border: #9cadeb 2px solid; */
+    display: flex;
+    align-items: center;
+    font-size:  1rem;
+    color: #ffffff;
+}
+
+.icon_alert{
+
+    width: 25px;
+    height: 25px;
+    margin: auto 10px;
 }
 
 .buttons-encript-container{
@@ -96,7 +118,7 @@ body{
     margin: 10px auto;
     display: flex;
     justify-content: space-between;
-    border: #12f299 1px solid;
+    /* border: #12f299 1px solid; */
 }
 
 .buttons-encript-container button{
@@ -137,6 +159,12 @@ body{
     resize: none;
 }
 
+.textoInformativo{
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px auto;
+    color: #ffffff;
+}
 
 .buttonCopy-div{
     width: 25%;
@@ -214,6 +242,10 @@ body{
     .content-container{
         height: 550px;
     }
+
+    .emptyImage{
+        width : 40%;
+    }
 }
 
 @media screen and (max-width: 1440px) {
@@ -234,6 +266,14 @@ body{
         height: 40px;
         font-size: 1rem;
     }
+
+    .textoLimitante{
+        font-size: 0.9rem;
+    }
+
+    .textoInformativo{
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 910px) {
@@ -241,6 +281,10 @@ body{
         width: 100px;
         height: 40px;
         font-size: 1rem;
+    }
+
+    .textoLimitante{
+        font-size: 0.7rem;
     }
 }
 
@@ -254,26 +298,42 @@ body{
         height: 40px;
         font-size: 1rem;
     }
- 
+
 }
 
 @media screen and (max-width: 700px){
     body{
         width: 95%;
     }
+
+    .header-container{
+        height: 60px;
+    }
+    .logo_alura{
+        height: 60px;
+        width: 60px;
+    }
     .content-container{
         flex-direction: column;
-
     }
 
     .input-container{
         width: 95%;
         margin: 10px auto;
     }
-    
+
     .output-container{
         width: 95%;
+        height: 340px;
         margin: 10px auto;
+
+    }
+
+    .outputText-container{
+        padding: 2px;
+    }
+    .buttonCopy-div{
+        margin: 3px auto;
     }
 }
 
@@ -286,20 +346,51 @@ body{
     .barra-nav ul li{
         font-size: 1.4rem;
     }
-    
-    
+
+
     .barra-nav ul li a:hover{
         font-size: 1.7rem;
     }
 
-    
- 
+
+
 }
 
 @media screen and (max-width: 475px){
     .buttonCopy-div{
         width: 35%;
     }
-    
+
+
+    .barra-nav ul li{
+        font-size: 1.1rem;
+    }
+
+
+    .barra-nav ul li a:hover{
+        font-size: 1.3rem;
+    }
+
+    .textoInformativo{
+        font-size: 0.85rem;
+    }
+
 }
 
+@media screen and (max-width: 340px){
+
+    .barra-nav ul li{
+        font-size: 0.9rem;
+    }
+
+
+    .barra-nav ul li a:hover{
+        font-size: 1.2rem;
+    }
+
+    .textoInformativo{
+        font-size: 0.75rem;
+    }
+
+
+}

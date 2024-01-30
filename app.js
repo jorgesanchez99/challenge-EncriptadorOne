@@ -1,9 +1,8 @@
-
-
 let btnCopy = document.getElementById("btnCopy");
 let btnCopyDiv = document.getElementById("buttonCopy-div");
 let outputTextDiv = document.getElementById("outputText-container");
 let emptyImage = document.getElementById("emptyImage");
+let divTextoInformativo = document.getElementById("textoInformativo");
 
 /* 
 !Expresion regular:
@@ -16,12 +15,11 @@ let emptyImage = document.getElementById("emptyImage");
 
 */
 
-// validateButtonCopy();
 initialImageStyles();
 
 function validateText() {
     let texto = document.getElementById("entradaTexto").value;
-    let regex = /^[a-z\s]+$/; // Expresión regular para validar minúsculas sin caracteres especiales ni acentos
+    let regex = /^[a-z\s]+$/; 
     
 
     /*
@@ -98,19 +96,15 @@ function copyText(){
     let texto = getText("salidaTexto");
     navigator.clipboard.writeText(texto); // Copiar texto al portapapeles
     cleanOutputText();
-    btnCopy.textContent = "Copiado";
+    Swal.fire({
+        title: 'Texto copiado!',
+        text: 'El texto se ha copiado al portapapeles.',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    });
     showImage();
 }
 
-// function validateButtonCopy(){
-//     let texto = getText("salidaTexto");
-//     if(texto != ""){
-//         btnCopy.disabled = false;
-//     }else{
-//         btnCopy.disabled = true;
-//     }
-
-// }
 
 function cleanInputText(){
     document.getElementById("entradaTexto").value = "";
@@ -149,35 +143,28 @@ function initialImageStyles(){
     outputTextDiv.classList.add('remove');
     emptyImage.classList.add('addBlock'); 
     emptyImage.classList.add("image-in");
+    divTextoInformativo.classList.add('addBlock');
 }
 
 function showImage(){
     
     outputTextDiv.classList.remove('addBlock');
     outputTextDiv.classList.add('remove');
+
+    btnCopyDiv.classList.remove('addFlex');
+    btnCopyDiv.classList.add('remove');
+
+    divTextoInformativo.classList.remove('remove');
+    divTextoInformativo.classList.add('addBlock');
     
     emptyImage.classList.remove("remove");
     emptyImage.classList.add('addBlock');
     emptyImage.classList.add("image-in");
-
-    
-    setTimeout(function() {
-        btnCopyDiv.classList.remove('addFlex');
-        btnCopyDiv.classList.add('remove');
-    }, 1000);
-
-return;
-
-    // emptyImage.addEventListener("animationend", function() {
-    //     btnCopyDiv.classList.remove('addFlex');
-    //     btnCopyDiv.classList.add('remove');
-    // });
+    return;
 }
 
 function hideImage(){
    
-    // emptyImage.classList.remove("image-in");
-    // emptyImage.classList.add("image-out");
     btnCopyDiv.classList.remove('remove');
     outputTextDiv.classList.remove('remove');
 
@@ -186,17 +173,9 @@ function hideImage(){
 
     btnCopyDiv.classList.add('addFlex');
     outputTextDiv.classList.add('addBlock');
-    // emptyImage.classList.remove("image-out"); 
 
-    // emptyImage.addEventListener("animationend", function() {
-    //     btnCopyDiv.classList.remove('remove');
-    //     outputTextDiv.classList.remove('remove');
-    //     emptyImage.classList.remove('addBlock');
-    //     emptyImage.classList.add('remove');
-    //     btnCopyDiv.classList.add('addFlex');
-    //     outputTextDiv.classList.add('addBlock');
-    //     emptyImage.classList.remove("image-out"); 
-    // });
+    divTextoInformativo.classList.remove('addBlock');
+    divTextoInformativo.classList.add('remove');
 }
 
 
