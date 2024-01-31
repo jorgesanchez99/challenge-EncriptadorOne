@@ -52,14 +52,34 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 .title-container{
     margin: 10px auto;
     padding-top: 10px;
-    /* border: #0a0a0a 1px solid; */
+    /* border: #0a0a0a 4px solid; */
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 3.5rem;
     color: #ffffff;
+}
+
+.title-container h1{
+    background: #f7ff00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #db36a4, #f7ff00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
 }
 
 .title-container span{
     color: #ffffff;
+    font-size: 2.5rem;
+
+    background: #A770EF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 
 .content-container{
@@ -83,6 +103,15 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     /* border: #d6d894b1 5px solid; */
 }
 
+.divSelect{
+    display: flex;
+    align-items: center;
+}
+
+.divSelect select{
+    margin: 0 10px;
+}
+
 .inputText-container label{
     display: block;
     margin: 15px 0;
@@ -99,6 +128,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     resize: none;
     background: none;
     color: #ffffff;
+    font-size: 1.5rem;
 }
 
 .inputText-container ::placeholder{
@@ -165,6 +195,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     background: none;
     resize: none;
     color: #ffffff;
+    font-size: 1.4rem;
 }
 
 .textoInformativo{
@@ -199,7 +230,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     /* display: block; */
     width : 50%;
     height: auto;
-    margin: 10px auto;
+    margin: 80px auto 10px auto;
 }
 
 .remove {
@@ -296,6 +327,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     .textoLimitante{
         font-size: 0.7rem;
     }
+
 }
 
 @media screen and (max-width: 768px){
@@ -400,6 +432,20 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
     .textoInformativo{
         font-size: 0.75rem;
+    }
+
+    .title-container{
+        padding-top: 5px;
+        line-height: 2.5rem;
+    }
+
+    .title-container h1{
+        font-size: 2.5rem;
+    }
+
+    .title-container span{
+        font-size: 1.5rem;
+
     }
 
 
