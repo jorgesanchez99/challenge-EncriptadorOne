@@ -10,8 +10,8 @@ body{
     margin: 0 auto;
     width: 80%;
     background: #141E30;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -50,7 +50,8 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 
 .title-container{
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-bottom: 30px;
     padding-top: 10px;
     /* border: #0a0a0a 4px solid; */
     text-align: center;
@@ -94,10 +95,11 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     width: 48%;
     margin-bottom: 10px;
     /* border: #9cadeb 2px solid; */
+    
 }
 .inputText-container{
     width: 100%;
-    padding: 0 10px 0 10px;
+    padding: 0px 10px 0 10px;
     /* padding: 10px; */
     color: #ffffff;
     /* border: #d6d894b1 5px solid; */
@@ -114,7 +116,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
 .inputText-container label{
     display: block;
-    margin: 15px 0;
+    margin: 3px 0;
     font-size: 1.2rem;
 }
 
@@ -277,6 +279,23 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 	}
 }
 
+
+.footer-div{
+    width: 100%;
+    height: 80px;
+    /* background-color: #0a0a0a; */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Agregado */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-icons img{
+    height: 40px;
+}
+
+
 /* !media queries */
 
 @media screen and (min-width: 1700px){
@@ -325,7 +344,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
     }
 
     .textoLimitante{
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
 }
@@ -335,11 +354,23 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
         width: 95%;
     }
 
+    .header-container{
+        padding-top: 5px;
+        height: 65px;
+    }
+
+    .logo_alura{
+        height: 60px;
+        width: 60px;
+    }
+
     .buttons-encript-container button{
         width: 100px;
         height: 40px;
         font-size: 1rem;
     }
+
+    
 
 }
 
@@ -355,20 +386,37 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
         height: 60px;
         width: 60px;
     }
+
+    .title-container{
+        margin: 0 auto;
+    }
+    .title-container h1{
+        font-size: 2rem ;
+    }
+
+    .title-container span{
+        font-size: 1.5rem ;
+    }
+
     .content-container{
         flex-direction: column;
+        margin: 0px auto;
     }
 
     .input-container{
         width: 95%;
-        margin: 10px auto;
+        margin: 0 auto;
     }
 
     .output-container{
         width: 95%;
-        height: 340px;
+        height: 300px;
         margin: 10px auto;
 
+    }
+
+    .emptyImage{
+        width : 30%;
     }
 
     .outputText-container{
@@ -415,6 +463,10 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
 
     .textoInformativo{
         font-size: 0.85rem;
+    }
+
+    .emptyImage{
+        width : 40%;
     }
 
 }
